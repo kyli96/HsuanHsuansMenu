@@ -29,11 +29,11 @@ local.properties
 .buildpath
 
 #################
-## SQL Server Compact
+## SQL Local
 #################
 
-[Aa]pp_[Dd]ata/
-*.sdf
+*.mdf
+*.ldf
 
 
 #################
