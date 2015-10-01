@@ -20,7 +20,7 @@ namespace HsuanHsuansMenu.Controllers
         // GET: api/Menus
         public IQueryable<Menu> GetMenus()
         {
-            return db.Menus.Include(x => x.Customer).Include(x => x.Items);
+            return db.Menus.Include(x => x.Customer).Include(x => x.Items).OrderBy(x => x.Date);
         }
 
         // GET: api/Menus/5
