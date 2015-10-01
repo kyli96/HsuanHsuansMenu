@@ -27,7 +27,7 @@ namespace HsuanHsuansMenu.Controllers
         [ResponseType(typeof(Menu))]
         public async Task<IHttpActionResult> GetMenu(int id)
         {
-            Menu menu = await db.Menus.FindAsync(id);
+            Menu menu = await db.Menus.Include(x => x.Customer).Include(x => x.Items).SingleOrDefaultAsync(x => x.Id == id);
             if (menu == null)
             {
                 return NotFound();
@@ -82,6 +82,8 @@ namespace HsuanHsuansMenu.Controllers
 
             db.Menus.Add(menu);
             await db.SaveChangesAsync();
+
+            db.Entry(menu).Reference(x => x.Customer).Load();
 
             return CreatedAtRoute("DefaultApi", new { id = menu.Id }, menu);
         }
