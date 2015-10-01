@@ -211,6 +211,7 @@
     <Content Include="Scripts\app\localService.js" />
     <Content Include="Scripts\app\menuControllers.js" />
     <Content Include="Scripts\app\remoteService.js" />
+    <Content Include="Scripts\app\utils.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\angular.min.js.map" />
